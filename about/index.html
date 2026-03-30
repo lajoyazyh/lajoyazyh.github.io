@@ -193,7 +193,7 @@
 <div class="h1" style="font-size: 2em; font-weight: bold; margin-top: 1em; margin-bottom: 0.5em;">ZHU YEHANG</div>
 
 <p>南京大学 · 软件工程（智能软件）本科</p>
-<p>📧 <a href="mailto:&#50;&#x33;&#x31;&#x38;&#x38;&#x30;&#x30;&#57;&#56;&#x40;&#x73;&#x6d;&#x61;&#105;&#108;&#46;&#110;&#x6a;&#x75;&#x2e;&#101;&#100;&#117;&#46;&#x63;&#x6e;">231880098@smail.nju.edu.cn</a><br>📧 <a href="mailto:&#x33;&#48;&#x33;&#53;&#x37;&#52;&#x35;&#55;&#x33;&#x30;&#x40;&#113;&#x71;&#46;&#x63;&#x6f;&#109;">3035745730@qq.com</a><br>📍 Yangzhou, Jiangsu<br>🐙 <a target="_blank" rel="noopener" href="https://github.com/lajoyazyh">github.com&#x2F;lajoyazyh</a></p>
+<p>📧 <a href="mailto:&#x32;&#51;&#49;&#x38;&#x38;&#48;&#48;&#57;&#x38;&#64;&#115;&#109;&#97;&#x69;&#x6c;&#x2e;&#x6e;&#x6a;&#117;&#x2e;&#x65;&#x64;&#x75;&#46;&#99;&#x6e;">231880098@smail.nju.edu.cn</a><br>📧 <a href="mailto:&#51;&#x30;&#x33;&#x35;&#55;&#52;&#53;&#x37;&#51;&#x30;&#64;&#113;&#x71;&#x2e;&#99;&#x6f;&#109;">3035745730@qq.com</a><br>📍 Yangzhou, Jiangsu<br>🐙 <a target="_blank" rel="noopener" href="https://github.com/lajoyazyh">github.com&#x2F;lajoyazyh</a></p>
 <h2 id="教育背景"><a href="#教育背景" class="headerlink" title="教育背景"></a>教育背景</h2><p><strong>南京大学 · 软件工程（智能软件）本科</strong></p>
 <ul>
 <li>2023年9月 – 至今</li>
@@ -850,6 +850,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 <!-- optional -->
+
+  <script type="module">
+  const el = document.querySelector('#comments #giscus');
+  util.viewportLazyload(el, load_discus, false);
+
+  function load_discus() {
+    if (!el) return;
+    try {
+        el.innerHTML = '';
+      } catch (error) {
+        console.error(error);
+      }
+      const script = document.createElement('script');
+      script.async = true;
+      for (const key of Object.keys(el.attributes)) {
+        const attr = el.attributes[key];
+        if (['class', 'id'].includes(attr.name) === false) {
+          script.setAttribute(attr.name, attr.value);
+        }
+      }
+      el.appendChild(script);
+  }
+</script>
+
 
 
 
