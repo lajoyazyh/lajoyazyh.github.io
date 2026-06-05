@@ -35,92 +35,93 @@
 
     // 求学
     var study = [
-      { lat: 32.06, lng: 118.78, title: '🎓 南京·鼓楼校区', desc: '南京大学 · 2023-2024' },
-      { lat: 31.37, lng: 120.66, title: '🎓 苏州', desc: '南京大学苏州校区 · 2024-2027' },
-      { lat: 22.30, lng: 114.26, title: '🎓 香港', desc: '香港科技大学交换 · 2025秋' }
+      { lat: 32.06, lng: 118.78, title: '🎓 南京', desc: '南京大学·鼓楼校区 · 2023-2024' },
+      { lat: 31.37, lng: 120.66, title: '🎓 苏州', desc: '南京大学·苏州校区 · 2024-2027' },
+      { lat: 22.30, lng: 114.26, title: '🎓 香港', desc: '香港科技大学(exchange) · 2025秋' }
     ];
 
     // 旅行
     var travel = [
     // 中国
       // 湖北
-      { lat: 30.59, lng: 114.31, title: '武汉' },
+      { lat: 30.59, lng: 114.31, title: '武汉', desc: '武汉' },
       // 江苏
-      { lat: 31.49, lng: 120.30, title: '无锡' },
-      { lat: 31.77, lng: 120.00, title: '常州' },
-      { lat: 32.19, lng: 119.45, title: '镇江' },
-      { lat: 33.50, lng: 119.02, title: '淮安' },
-      { lat: 33.35, lng: 120.16, title: '盐城' },
-      { lat: 32.46, lng: 119.91, title: '泰州' },
+      { lat: 31.49, lng: 120.30, title: '无锡', desc: '无锡' },
+      { lat: 31.77, lng: 120.00, title: '常州', desc: '常州' },
+      { lat: 32.19, lng: 119.45, title: '镇江', desc: '镇江' },
+      { lat: 33.50, lng: 119.02, title: '淮安', desc: '淮安' },
+      { lat: 33.35, lng: 120.16, title: '盐城', desc: '盐城' },
+      { lat: 32.46, lng: 119.91, title: '泰州', desc: '泰州' },
       // 安徽
-      { lat: 31.33, lng: 118.38, title: '芜湖' },
-      { lat: 31.68, lng: 118.51, title: '马鞍山' },
-      { lat: 30.95, lng: 118.76, title: '宣城' },
-      { lat: 32.30, lng: 118.31, title: '滁州' },
-      { lat: 31.82, lng: 117.23, title: '合肥' },
-      { lat: 29.72, lng: 118.33, title: '黄山' },
+      { lat: 31.33, lng: 118.38, title: '芜湖', desc: '芜湖' },
+      { lat: 31.68, lng: 118.51, title: '马鞍山', desc: '马鞍山' },
+      { lat: 30.95, lng: 118.76, title: '宣城', desc: '宣城' },
+      { lat: 32.30, lng: 118.31, title: '滁州', desc: '滁州' },
+      { lat: 31.82, lng: 117.23, title: '合肥', desc: '合肥' },
+      { lat: 29.72, lng: 118.33, title: '黄山', desc: '黄山' },
       // 浙江
-      { lat: 30.27, lng: 120.15, title: '杭州' },
-      { lat: 29.87, lng: 121.55, title: '宁波' },
-      { lat: 30.87, lng: 120.10, title: '湖州' },
-      { lat: 30.00, lng: 120.58, title: '绍兴' },
-      { lat: 30.77, lng: 120.76, title: '嘉兴' },
-      { lat: 29.95, lng: 122.10, title: '舟山' },
+      { lat: 30.27, lng: 120.15, title: '杭州', desc: '杭州' },
+      { lat: 29.87, lng: 121.55, title: '宁波', desc: '宁波' },
+      { lat: 30.87, lng: 120.10, title: '湖州', desc: '湖州' },
+      { lat: 30.00, lng: 120.58, title: '绍兴', desc: '绍兴' },
+      { lat: 30.77, lng: 120.76, title: '嘉兴', desc: '嘉兴' },
+      { lat: 29.95, lng: 122.10, title: '舟山', desc: '舟山' },
       // 直辖市
-      { lat: 39.90, lng: 116.40, title: '北京' },
-      { lat: 31.23, lng: 121.47, title: '上海' },
+      { lat: 39.90, lng: 116.40, title: '北京', desc: '北京' },
+      { lat: 31.23, lng: 121.47, title: '上海', desc: '上海' },
       // 粤港澳
-      { lat: 23.13, lng: 113.26, title: '广州' },
-      { lat: 22.55, lng: 114.06, title: '深圳' },
-      { lat: 22.20, lng: 113.55, title: '澳门' },
-      { lat: 22.28, lng: 113.58, title: '珠海' },
+      { lat: 23.13, lng: 113.26, title: '广州', desc: '广州' },
+      { lat: 22.55, lng: 114.06, title: '深圳', desc: '深圳' },
+      { lat: 22.20, lng: 113.55, title: '澳门', desc: '澳门' },
+      { lat: 22.28, lng: 113.58, title: '珠海', desc: '珠海' },
       // 山东
-      { lat: 36.07, lng: 120.38, title: '青岛' },
+      { lat: 36.07, lng: 120.38, title: '青岛', desc: '青岛' },
       // 辽宁
-      { lat: 38.91, lng: 121.60, title: '大连' },
-      { lat: 41.80, lng: 123.43, title: '沈阳' },
-      { lat: 41.30, lng: 123.77, title: '本溪' },
+      { lat: 38.91, lng: 121.60, title: '大连', desc: '大连' },
+      { lat: 41.80, lng: 123.43, title: '沈阳', desc: '沈阳' },
+      { lat: 41.30, lng: 123.77, title: '本溪', desc: '本溪' },
       // 吉林
-      { lat: 43.88, lng: 125.32, title: '长春' },
-      { lat: 42.89, lng: 129.51, title: '延吉' },
+      { lat: 43.88, lng: 125.32, title: '长春', desc: '长春' },
+      { lat: 42.89, lng: 129.51, title: '延吉', desc: '延吉' },
       // 山西
-      { lat: 37.87, lng: 112.55, title: '太原' },
+      { lat: 37.87, lng: 112.55, title: '太原', desc: '太原' },
       // 陕西
-      { lat: 34.26, lng: 108.94, title: '西安' },
+      { lat: 34.26, lng: 108.94, title: '西安', desc: '西安' },
       // 甘肃
-      { lat: 36.06, lng: 103.83, title: '兰州' },
-      { lat: 38.93, lng: 100.45, title: '张掖' },
-      { lat: 40.14, lng: 94.66, title: '敦煌' },
+      { lat: 36.06, lng: 103.83, title: '兰州', desc: '兰州' },
+      { lat: 38.93, lng: 100.45, title: '张掖', desc: '张掖' },
+      { lat: 40.14, lng: 94.66, title: '敦煌', desc: '敦煌' },
       // 青海
-      { lat: 36.62, lng: 101.78, title: '西宁' },
-    //韩国
-      { lat: 37.56, lng: 126.98, title: '首尔' },
-      { lat: 35.17, lng: 129.07, title: '釜山' },
-      { lat: 33.47, lng: 126.53, title: '济州岛' }
+      { lat: 36.62, lng: 101.78, title: '西宁', desc: '西宁' },
+    // 韩国
+      { lat: 37.56, lng: 126.98, title: '首尔', desc: '首尔' },
+      { lat: 35.17, lng: 129.07, title: '釜山', desc: '釜山' },
+      { lat: 33.47, lng: 126.53, title: '济州岛', desc: '济州岛' }
     ];
 
     // 添加家乡标记
     home.forEach(function(p) {
       L.circleMarker([p.lat, p.lng], {
-        radius: 12, fillColor: colors.home, color: '#fff',
+        radius: 12, fillColor: colors.home, color: '#00000050',
         weight: 2, opacity: 1, fillOpacity: 0.85
-      }).addTo(map).bindPopup('<h4>' + p.title + '</h4><p>' + p.desc + '</p>');
+      }).addTo(map).bindPopup('<h4 style="color: #333; margin-bottom: 5px;">' + p.title + '</h4><p style="color: #666; margin: 0;">' + p.desc + '</p>');
     });
 
     // 添加求学标记
     study.forEach(function(p) {
       L.circleMarker([p.lat, p.lng], {
-        radius: 12, fillColor: colors.study, color: '#fff',
+        radius: 12, fillColor: colors.study, color: '#00000050',
         weight: 2, opacity: 1, fillOpacity: 0.85
-      }).addTo(map).bindPopup('<h4>' + p.title + '</h4><p>' + p.desc + '</p>');
+      }).addTo(map).bindPopup('<h4 style="color: #333; margin-bottom: 5px;">' + p.title + '</h4><p style="color: #666; margin: 0;">' + p.desc + '</p>');
     });
 
     // 添加旅行标记（小圆点）
     travel.forEach(function(p) {
       L.circleMarker([p.lat, p.lng], {
-        radius: 7, fillColor: colors.travel, color: '#fff',
+        radius: 7, fillColor: colors.travel, color: '#00000050',
         weight: 1.5, opacity: 1, fillOpacity: 0.75
-      }).addTo(map).bindPopup('<h4>' + p.title + '</h4>');
+      }).addTo(map).bindPopup('<h4 style="color: #333; margin-bottom: 5px;">' + p.title + '</h4><p style="color: #666; margin: 0;">' + p.desc + '</p>');
     });
+
   }
 })();
