@@ -62,9 +62,9 @@
     { type: 'travel', lat: 34.26, lng: 108.94, title: '西安', desc: '西安', cityName: '西安市', province: '610000' },
     // 甘肃
     { type: 'travel', lat: 36.06, lng: 103.83, title: '兰州', desc: '兰州', cityName: '兰州市', province: '620000' },
-    { type: 'travel', lat: 38.93, lng: 100.45, title: '张掖', desc: '张掖', cityName: '张掖市', province: '620000' },
+    { type: 'travel', lat: 38.93, lng: 100.45, title: '张掖', desc: '张掖。 \n 如果没机会去the grand canyon， 那就来一趟七彩丹霞吧！', cityName: '张掖市', province: '620000' },
     { type: 'travel', lat: 39.74, lng: 98.49, title: '酒泉', desc: '酒泉。 \n 实际去的是敦煌，游玩了鸣沙山月牙泉和莫高窟，确实是惊为天人。 \n 可惜当时莫高窟参观一次只能由向导随机带领看三个洞窟，然后自由观赏主窟，导致我也只看到了冰山一角。希望有机会再去！）', cityName: '酒泉市', province: '620000' },
-    { type: 'travel', lat: 39.7721, lng: 98.2888, title: '嘉峪关', desc: '嘉峪关。\n 其实那次很遗憾，明明都到嘉峪关了，但是当天天气原因（可能是沙尘暴？）没去成嘉峪关城楼，然后旅游团说既然不开放我们就不去了，只好远远的看了一眼（实际上雾蒙蒙的也没看清楚），然后就驶向下一站了。', cityName: '嘉峪关市', province: '620000' },
+    { type: 'travel', lat: 39.7721, lng: 98.2888, title: '嘉峪关', desc: '嘉峪关。\n 其实那次很遗憾，明明都到嘉峪关了，但是当天天气原因（可能是沙尘暴？）嘉峪关城楼没开放，然后旅游团说既然不开放我们就不去了，只好远远的看了一眼（实际上雾蒙蒙的也没看清楚），然后就驶向下一站了。', cityName: '嘉峪关市', province: '620000' },
     // 青海
     { type: 'travel', lat: 36.62, lng: 101.78, title: '西宁', desc: '西宁', cityName: '西宁市', province: '630000' },
     { type: 'travel', lat: 36.97, lng: 100.24, title: '青海湖（海南）', desc: '青海湖。 \n "高原蓝宝石"，我国最大的内陆咸水湖。湖水湛蓝，周围草原辽阔，我去的时候油菜花田正好盛放，确实美不胜收。', cityName: '海南藏族自治州', province: '630000' },

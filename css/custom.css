@@ -1,6 +1,7 @@
 /* Claude 风格柔和浅色模式 */
 [data-theme="light"] {
-  --color-body: #f3eed7de;
+  /* --color-body: #f3eed7de; */
+  --color-body: #d7edf3de;
   --color-text: #1F1F1F;
   --color-text-secondary: #5C5C5C;
   --color-card: #FFFFFF;

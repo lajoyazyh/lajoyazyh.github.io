@@ -71,12 +71,26 @@
         }
 
         getRandomColor() {
-            const colors = [
+            // 检测是否为深色模式
+            const isDarkMode = document.body.classList.contains('dark-mode') || 
+                               document.documentElement.getAttribute('data-theme') === 'dark';
+            
+            // 浅色模式用深色字体，深色模式用浅色字体
+            const lightColors = [
+                'rgba(60, 60, 60, 1)',
+                'rgba(80, 80, 80, 1)',
+                'rgba(100, 100, 100, 1)',
+                'rgba(120, 120, 120, 1)'
+            ];
+            
+            const darkColors = [
                 'rgba(255, 255, 255, 1)',
                 'rgba(240, 240, 240, 1)',
                 'rgba(220, 220, 220, 1)',
                 'rgba(200, 200, 200, 1)'
             ];
+            
+            const colors = isDarkMode ? darkColors : lightColors;
             return colors[Math.floor(Math.random() * colors.length)];
         }
 
