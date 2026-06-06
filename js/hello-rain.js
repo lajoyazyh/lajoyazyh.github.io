@@ -109,7 +109,8 @@
         particles = [];
         for (let i = 0; i < count; i++) {
             const particle = new Particle();
-            particle.y = Math.random() * canvas.height;
+            // 让粒子的初始 y 坐标在屏幕上方随机分布，这样它们会陆续下落
+            particle.y = -30 - Math.random() * canvas.height;
             particles.push(particle);
         }
     }

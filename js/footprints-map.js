@@ -64,8 +64,11 @@
     { type: 'travel', lat: 36.06, lng: 103.83, title: '兰州', desc: '兰州', cityName: '兰州市', province: '620000' },
     { type: 'travel', lat: 38.93, lng: 100.45, title: '张掖', desc: '张掖', cityName: '张掖市', province: '620000' },
     { type: 'travel', lat: 39.74, lng: 98.49, title: '酒泉', desc: '酒泉。 \n 实际去的是敦煌，游玩了鸣沙山月牙泉和莫高窟，确实是惊为天人。 \n 可惜当时莫高窟参观一次只能由向导随机带领看三个洞窟，然后自由观赏主窟，导致我也只看到了冰山一角。希望有机会再去！）', cityName: '酒泉市', province: '620000' },
+    { type: 'travel', lat: 39.7721, lng: 98.2888, title: '嘉峪关', desc: '嘉峪关。\n 其实那次很遗憾，明明都到嘉峪关了，但是当天天气原因（可能是沙尘暴？）没去成嘉峪关城楼，然后旅游团说既然不开放我们就不去了，只好远远的看了一眼（实际上雾蒙蒙的也没看清楚），然后就驶向下一站了。', cityName: '嘉峪关市', province: '620000' },
     // 青海
     { type: 'travel', lat: 36.62, lng: 101.78, title: '西宁', desc: '西宁', cityName: '西宁市', province: '630000' },
+    { type: 'travel', lat: 36.97, lng: 100.24, title: '青海湖（海南）', desc: '青海湖。 \n "高原蓝宝石"，我国最大的内陆咸水湖。湖水湛蓝，周围草原辽阔，我去的时候油菜花田正好盛放，确实美不胜收。', cityName: '海南藏族自治州', province: '630000' },
+    { type: 'travel', lat: 36.72, lng: 99.08, title: '茶卡盐湖（海西）', desc: '茶卡盐湖。 \n "天空之镜"，站在湖面上，真的能看到自己的倒影映在天地之间。景区非常有特色的就地取材，用粗大的盐粒直接铺路，还有很多盐雕，很有意思。', cityName: '海西蒙古族藏族自治州', province: '630000' },
 
     // ===== 旅行：韩国 ===== (cityName 与 southkorea-maps GeoJSON 的 properties.name 一致，韩文)
     { type: 'travel', lat: 37.56, lng: 126.98, title: '首尔', desc: '首尔。 \n "Seoul my soul." 彻底颠覆我对这座城市乃至这个国家刻板印象的一座城市，当之无愧的亚洲一线。尤其欣赏他们在各种国家级博物馆中，对于很多历史事件的陈述与反思，真的很有启发意义。', cityName: '서울특별시', country: 'KR' },
