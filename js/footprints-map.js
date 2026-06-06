@@ -5,16 +5,15 @@
   // province: 中国大陆省级 adcode；港澳台用 810000/820000/710000；境外用国家代码
   var places = [
     // ===== 家乡 =====
-    { type: 'home', lat: 32.39, lng: 119.42, title: '🏠 扬州', desc: '家乡', cityName: '扬州市', province: '320000' },
+    { type: 'home', lat: 32.39, lng: 119.42, title: '🏠 扬州', desc: '家乡。感谢花园小学、树人初中、扬州中学的栽培，感谢我的父母让我出生在这样一座美丽的城市。', cityName: '扬州市', province: '320000' },
 
     // ===== 求学 =====
-    { type: 'study', lat: 32.06, lng: 118.78, title: '🎓 南京', desc: '南京大学·鼓楼校区 · 2023-2024', cityName: '南京市', province: '320000' },
-    { type: 'study', lat: 31.37, lng: 120.66, title: '🎓 苏州', desc: '南京大学·苏州校区 · 2024-2027', cityName: '苏州市', province: '320000' },
-    { type: 'study', lat: 22.30, lng: 114.26, title: '🎓 香港', desc: '香港科技大学(exchange) · 2025秋', cityName: '香港特别行政区', province: '810000', country: 'HK' },
+    { type: 'study', lat: 32.06, lng: 118.78, title: '🎓 南京', desc: '南京大学·鼓楼校区·健雄书院 · 2023-2024 \n 选择南京大学一个后来让我反复崩溃后悔或是庆幸欣慰的选择。不过无论如何，感恩南京用它厚重的历史接住了我最无助迷茫的大一岁月', cityName: '南京市', province: '320000' },
+    { type: 'study', lat: 31.37, lng: 120.66, title: '🎓 苏州', desc: '南京大学·苏州校区·智能软件与工程学院 · 2024-2027 \n 虽然是一次身不由己的rebase（不过身边的不少人反而是冲着苏州才报的这个专业组），不过这座城市还是用它的现代与积极尽可能周到地照顾了我。', cityName: '苏州市', province: '320000' },
+    { type: 'study', lat: 22.30, lng: 114.26, title: '🎓 香港', desc: '香港科技大学(exchange) · 2025秋 \n 到底是祛魅还是对错过的机会的追忆？我也说不上来。非常珍贵的一段交换经历，让我更加全面的了解这个世界的运转方式，也认识到了很多有趣的外国朋友。', cityName: '香港特别行政区', province: '810000', country: 'HK' },
 
     // ===== 旅行：中国大陆 =====
-    // 湖北
-    { type: 'travel', lat: 30.59, lng: 114.31, title: '武汉', desc: '武汉', cityName: '武汉市', province: '420000' },
+
     // 江苏
     { type: 'travel', lat: 31.49, lng: 120.30, title: '无锡', desc: '无锡', cityName: '无锡市', province: '320000' },
     { type: 'travel', lat: 31.77, lng: 120.00, title: '常州', desc: '常州', cityName: '常州市', province: '320000' },
@@ -44,6 +43,10 @@
     { type: 'travel', lat: 22.55, lng: 114.06, title: '深圳', desc: '深圳', cityName: '深圳市', province: '440000' },
     { type: 'travel', lat: 22.20, lng: 113.55, title: '澳门', desc: '澳门', cityName: '澳门特别行政区', province: '820000', country: 'MO' },
     { type: 'travel', lat: 22.28, lng: 113.58, title: '珠海', desc: '珠海', cityName: '珠海市', province: '440000' },
+    // 湖北
+    { type: 'travel', lat: 30.59, lng: 114.31, title: '武汉', desc: '武汉', cityName: '武汉市', province: '420000' },
+    // 湖南
+    { type: 'travel', lat: 29.117, lng: 110.479, title: '张家界', desc: '张家界', cityName: '张家界市', province: '430000' },
     // 山东
     { type: 'travel', lat: 36.07, lng: 120.38, title: '青岛', desc: '青岛', cityName: '青岛市', province: '370000' },
     // 辽宁
@@ -157,7 +160,7 @@
       });
       marker.bindPopup(
         '<h4 style="color:#333;margin-bottom:5px;">' + p.title + '</h4>' +
-        '<p style="color:#666;margin:0;">' + p.desc + '</p>'
+        '<p style="color:#666;margin:0;">' + p.desc.replace(/\n/g, '<br>') + '</p>'
       );
       layer.addLayer(marker);
     });
@@ -265,7 +268,7 @@
     return function(feature, layer) {
       layer.bindPopup(
         '<h4 style="color:#333;margin-bottom:5px;">' + entry.title + '</h4>' +
-        '<p style="color:#666;margin:0;">' + entry.desc + '</p>'
+        '<p style="color:#666;margin:0;">' + entry.desc.replace(/\n/g, '<br>') + '</p>'
       );
       layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.8 }); });
       layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.55 }); });
