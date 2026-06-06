@@ -197,24 +197,49 @@
         particles = [];
     }
 
-    // 页面加载时触发
+    // 检查是否为首页
+    function isHomePage() {
+        const path = window.location.pathname;
+        return path === '/' || path === '/index.html' || path.endsWith('/');
+    }
+
+    // 检查是否已经触发过动画（使用 sessionStorage）
+    function hasTriggered() {
+        return sessionStorage.getItem('helloRainTriggered') === 'true';
+    }
+
+    // 记录已触发
+    function markTriggered() {
+        sessionStorage.setItem('helloRainTriggered', 'true');
+    }
+
+    // 页面加载时触发（仅首页且未触发过）
+    function handlePageLoad() {
+        if (isHomePage() && !hasTriggered()) {
+            setTimeout(() => {
+                startHelloRain();
+                markTriggered();
+            }, 500);
+        }
+    }
+
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', startHelloRain);
+        document.addEventListener('DOMContentLoaded', handlePageLoad);
     } else {
-        setTimeout(startHelloRain, 500);
+        handlePageLoad();
     }
 
     // 头像点击时触发
     document.addEventListener('click', (e) => {
-        const avatar = e.target.closest('.avatar, .user-avatar, img[src*="avatar"]');
+        // 检查点击元素或其父元素是否是头像
+        const avatar = e.target.closest('.avatar');
         if (avatar) {
+            e.preventDefault();
+            e.stopPropagation();
             startHelloRain();
         }
     });
 
-    // 监听 PJAX 页面切换
-    document.addEventListener('pjax:complete', () => {
-        setTimeout(startHelloRain, 300);
-    });
+    // 不再监听 PJAX 页面切换
 
 })();
