@@ -66,6 +66,7 @@
 
     // ===== 旅行：韩国 ===== (cityName 与 southkorea-maps GeoJSON 的 properties.name 一致，韩文)
     { type: 'travel', lat: 37.56, lng: 126.98, title: '首尔', desc: '首尔', cityName: '서울특별시', country: 'KR' },
+    { type: 'travel', lat: 37.46, lng: 126.71, title: '仁川', desc: '仁川（虽然没下来玩，但是从仁川机场下飞机去的首尔，浅浅地仁川登陆了一下）', cityName: '인천광역시', country: 'KR' },
     { type: 'travel', lat: 35.17, lng: 129.07, title: '釜山', desc: '釜山', cityName: '부산광역시', country: 'KR' },
     { type: 'travel', lat: 33.47, lng: 126.53, title: '济州岛', desc: '济州岛', cityName: '제주특별자치도', country: 'KR' }
   ];
@@ -167,26 +168,26 @@
     var typePriority = { home: 3, study: 2, travel: 1 };
     function pickType(a, b) { return typePriority[a] >= typePriority[b] ? a : b; }
 
-    // cityMap[cityName] = { type, displayName }
+    // cityMap[cityName] = { type, title, desc }
     var cnByProvince = {};
     var krCities = {};
 
-    function upsert(map, key, type, displayName) {
+    function upsert(map, key, p) {
       if (map[key]) {
-        map[key].type = pickType(map[key].type, type);
+        map[key].type = pickType(map[key].type, p.type);
       } else {
-        map[key] = { type: type, displayName: displayName };
+        // 韩国 title 后面附上韩文原名，便于辨认
+        var titleText = (p.country === 'KR') ? (p.title + '（' + p.cityName + '）') : p.title;
+        map[key] = { type: p.type, title: titleText, desc: p.desc };
       }
     }
 
     places.forEach(function(p) {
-      // 弹窗显示用：中文 title 优先；韩国附加韩文原名
-      var display = p.title.replace(/^[^\u4e00-\u9fa5a-zA-Z]+/, ''); // 去掉前面的 emoji
       if (p.country === 'KR') {
-        upsert(krCities, p.cityName, p.type, display + '（' + p.cityName + '）');
+        upsert(krCities, p.cityName, p);
       } else if (p.province) {
         if (!cnByProvince[p.province]) cnByProvince[p.province] = {};
-        upsert(cnByProvince[p.province], p.cityName, p.type, p.cityName);
+        upsert(cnByProvince[p.province], p.cityName, p);
       }
     });
 
@@ -203,7 +204,7 @@
           .then(function(geo) {
             L.geoJSON(geo, {
               style: regionStyle(entry.type),
-              onEachFeature: bindRegionPopup(entry.displayName, entry.type)
+              onEachFeature: bindRegionPopup(entry)
             }).addTo(layer);
           })
           .catch(function(err) { console.warn('Failed to load region', adcode, err); });
@@ -222,8 +223,7 @@
           L.geoJSON(filtered, {
             style: function(f) { return regionStyle(cityMap[f.properties.name].type); },
             onEachFeature: function(f, l) {
-              var e = cityMap[f.properties.name];
-              bindRegionPopup(e.displayName, e.type)(f, l);
+              bindRegionPopup(cityMap[f.properties.name])(f, l);
             }
           }).addTo(layer);
         })
@@ -243,8 +243,7 @@
           L.geoJSON(filtered, {
             style: function(f) { return regionStyle(krCities[f.properties.name].type); },
             onEachFeature: function(f, l) {
-              var e = krCities[f.properties.name];
-              bindRegionPopup(e.displayName, e.type)(f, l);
+              bindRegionPopup(krCities[f.properties.name])(f, l);
             }
           }).addTo(layer);
         })
@@ -262,12 +261,11 @@
     };
   }
 
-  function bindRegionPopup(name, type) {
-    var typeLabel = { home: '🏠 家乡', study: '🎓 求学', travel: '✈️ 旅行' }[type] || '';
+  function bindRegionPopup(entry) {
     return function(feature, layer) {
       layer.bindPopup(
-        '<h4 style="color:#333;margin-bottom:5px;">' + name + '</h4>' +
-        '<p style="color:#666;margin:0;">' + typeLabel + '</p>'
+        '<h4 style="color:#333;margin-bottom:5px;">' + entry.title + '</h4>' +
+        '<p style="color:#666;margin:0;">' + entry.desc + '</p>'
       );
       layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.8 }); });
       layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.55 }); });
