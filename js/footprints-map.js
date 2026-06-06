@@ -57,21 +57,21 @@
     { type: 'travel', lat: 43.88, lng: 125.32, title: '长春', desc: '长春', cityName: '长春市', province: '220000' },
     { type: 'travel', lat: 42.89, lng: 129.51, title: '延吉', desc: '延吉（延边朝鲜族自治州）', cityName: '延边朝鲜族自治州', province: '220000' },
     // 山西
-    { type: 'travel', lat: 37.87, lng: 112.55, title: '太原', desc: '太原', cityName: '太原市', province: '140000' },
+    { type: 'travel', lat: 36.1954, lng: 113.1163, title: '长治', desc: '长治。\n 实际上去的是下属的武乡，去这个地方也是当时树人初中组织研学活动，关于这个地方具体的记忆点已经完全没有了，只记得在酒店里我们一堆男生互相打闹恶作剧了哈哈哈', cityName: '长治市', province: '140000' },
     // 陕西
     { type: 'travel', lat: 34.26, lng: 108.94, title: '西安', desc: '西安', cityName: '西安市', province: '610000' },
     // 甘肃
     { type: 'travel', lat: 36.06, lng: 103.83, title: '兰州', desc: '兰州', cityName: '兰州市', province: '620000' },
     { type: 'travel', lat: 38.93, lng: 100.45, title: '张掖', desc: '张掖', cityName: '张掖市', province: '620000' },
-    { type: 'travel', lat: 39.74, lng: 98.49, title: '酒泉', desc: '酒泉（实际去的是敦煌，看了鸣沙山月牙泉和莫高窟）', cityName: '酒泉市', province: '620000' },
+    { type: 'travel', lat: 39.74, lng: 98.49, title: '酒泉', desc: '酒泉。 \n 实际去的是敦煌，游玩了鸣沙山月牙泉和莫高窟，确实是惊为天人。 \n 可惜当时莫高窟参观一次只能由向导随机带领看三个洞窟，然后自由观赏主窟，导致我也只看到了冰山一角。希望有机会再去！）', cityName: '酒泉市', province: '620000' },
     // 青海
     { type: 'travel', lat: 36.62, lng: 101.78, title: '西宁', desc: '西宁', cityName: '西宁市', province: '630000' },
 
     // ===== 旅行：韩国 ===== (cityName 与 southkorea-maps GeoJSON 的 properties.name 一致，韩文)
-    { type: 'travel', lat: 37.56, lng: 126.98, title: '首尔', desc: '首尔', cityName: '서울특별시', country: 'KR' },
-    { type: 'travel', lat: 37.46, lng: 126.71, title: '仁川', desc: '仁川（虽然没下来玩，但是从仁川机场下飞机去的首尔，浅浅地仁川登陆了一下）', cityName: '인천광역시', country: 'KR' },
-    { type: 'travel', lat: 35.17, lng: 129.07, title: '釜山', desc: '釜山', cityName: '부산광역시', country: 'KR' },
-    { type: 'travel', lat: 33.47, lng: 126.53, title: '济州岛', desc: '济州岛', cityName: '제주특별자치도', country: 'KR' }
+    { type: 'travel', lat: 37.56, lng: 126.98, title: '首尔', desc: '首尔。 \n "Seoul my soul." 彻底颠覆我对这座城市乃至这个国家刻板印象的一座城市，当之无愧的亚洲一线。尤其欣赏他们在各种国家级博物馆中，对于很多历史事件的陈述与反思，真的很有启发意义。', cityName: '서울특별시', country: 'KR' },
+    { type: 'travel', lat: 37.46, lng: 126.71, title: '仁川', desc: '仁川 \n 虽然没下来玩，但是从仁川机场下飞机去的首尔，浅浅地仁川登陆了一下。 \n By the way 我必须吐槽一下仁川机场的入境，让所有外国人（不只是中国人）全部排长队，一排边的窗口只开三个，害我们等了一个多小时才入境。', cityName: '인천광역시', country: 'KR' },
+    { type: 'travel', lat: 35.17, lng: 129.07, title: '釜山', desc: '釜山。 \n "Busan is good!" \n 深邃的海，柔和的阳光，静静的跨过海湾的广安里大桥，人声鼎沸的扎嘎其海鲜市场，还有热情而不急不躁的市民们。一切都是那么的恰到好处。一定会再见的！', cityName: '부산광역시', country: 'KR' },
+    { type: 'travel', lat: 33.47, lng: 126.53, title: '济州岛', desc: '济州岛。 \n 会永远纪念人生第一次打车被恶意兜圈子绕路,这座岛唯一值得留恋的就是海景了。 \n 其他地方的话...一句话概括就是中国旅游团挤满韩国大农村————谁也别笑谁，素质这一块都半斤八两', cityName: '제주특별자치도', country: 'KR' }
   ];
 
   var colors = { home: '#e74c3c', study: '#3b82f6', travel: '#10b981' };
