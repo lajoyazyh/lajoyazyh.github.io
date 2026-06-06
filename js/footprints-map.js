@@ -199,7 +199,7 @@
       if (directMunicipalities.indexOf(adcode) >= 0) {
         var onlyKey = Object.keys(cityMap)[0];
         var entry = cityMap[onlyKey];
-        fetch('https://geo.datav.aliyun.com/areas_v3/bound/' + adcode + '.json')
+        fetch('/data/geojson/' + adcode + '.json')
           .then(function(r) { return r.json(); })
           .then(function(geo) {
             L.geoJSON(geo, {
@@ -211,7 +211,7 @@
         return;
       }
 
-      fetch('https://geo.datav.aliyun.com/areas_v3/bound/' + adcode + '_full.json')
+      fetch('/data/geojson/' + adcode + '_full.json')
         .then(function(r) { return r.json(); })
         .then(function(geo) {
           var filtered = {
@@ -231,7 +231,7 @@
     });
 
     if (Object.keys(krCities).length > 0) {
-      fetch('https://raw.githubusercontent.com/southkorea/southkorea-maps/master/kostat/2018/json/skorea-provinces-2018-geo.json')
+      fetch('/data/geojson/skorea-provinces-2018-geo.json')
         .then(function(r) { return r.json(); })
         .then(function(geo) {
           var filtered = {
