@@ -75,7 +75,9 @@
     { type: 'travel', lat: 37.56, lng: 126.98, title: '首尔', titleEn: 'Seoul', desc: '首尔。 \n "Seoul my soul." 彻底颠覆我对这座城市乃至这个国家刻板印象的一座城市，当之无愧的亚洲一线。尤其欣赏他们在各种国家级博物馆中，对于很多历史事件的陈述与反思，真的很有启发意义。', cityName: '서울특별시', country: 'KR' },
     { type: 'travel', lat: 37.46, lng: 126.71, title: '仁川', titleEn: 'Incheon', desc: '仁川 \n 虽然没下来玩，但是从仁川机场下飞机去的首尔，浅浅地仁川登陆了一下。 \n By the way 我必须吐槽一下仁川机场的入境，让所有外国人（不只是中国人）全部排长队，一排边的窗口只开三个，害我们等了一个多小时才入境。', cityName: '인천광역시', country: 'KR' },
     { type: 'travel', lat: 35.17, lng: 129.07, title: '釜山', titleEn: 'Busan', desc: '釜山。 \n "Busan is good!" \n 深邃的海，柔和的阳光，静静的跨过海湾的广安里大桥，人声鼎沸的扎嘎其海鲜市场，还有热情而不急不躁的市民们。一切都是那么的恰到好处。一定会再见的！', cityName: '부산광역시', country: 'KR' },
-    { type: 'travel', lat: 33.47, lng: 126.53, title: '济州岛', titleEn: 'Jeju Island', desc: '济州岛。 \n 会永远纪念人生第一次打车被恶意兜圈子绕路,这座岛唯一值得留恋的就是海景了。 \n 其他地方的话...一句话概括就是中国旅游团挤满韩国大农村————谁也别笑谁，素质这一块都半斤八两', cityName: '제주특별자치도', country: 'KR' }
+    // 济州特别自治道包含济州市和西归浦市两个城市
+    { type: 'travel', lat: 33.52, lng: 126.53, title: '济州市', titleEn: 'Jeju-si', desc: '济州市。 \n 会永远纪念人生第一次打车被恶意兜圈子绕路,这座岛唯一值得留恋的就是海景了。 \n 其他地方的话...一句话概括就是中国旅游团挤满韩国大农村————谁也别笑谁，素质这一块都半斤八两', cityName: '제주특별자치도', country: 'KR' },
+    { type: 'travel', lat: 33.25, lng: 126.56, title: '西归浦市', titleEn: 'Seogwipo-si', desc: '西归浦市', cityName: '제주특별자치도', country: 'KR' }
   ];
 
   var colors = { home: '#e74c3c', study: '#3b82f6', travel: '#10b981' };
