@@ -58,3 +58,32 @@ body {
 .user-card .follow {
   display: none !important;
 }
+
+/* 语言切换按钮样式 */
+.lang-switch {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.lang-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  color: var(--text-p3);
+}
+
+.lang-btn.active {
+  color: var(--text-p1);
+  font-weight: bold;
+  background: var(--card-hover);
+}
+
+.lang-btn:hover {
+  color: var(--text-p1);
+}

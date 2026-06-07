@@ -56,6 +56,7 @@
     // 吉林
     { type: 'travel', lat: 43.88, lng: 125.32, title: '长春', desc: '长春', cityName: '长春市', province: '220000' },
     { type: 'travel', lat: 42.89, lng: 129.51, title: '延吉', desc: '延吉（延边朝鲜族自治州）', cityName: '延边朝鲜族自治州', province: '220000' },
+    // 不确定算不算 { type: 'travel', lat: 41.933, lng: 126.423, title: '白山', desc: '白山。\n 实际上是去的长白山', cityName: '白山市', province: '220000' },
     // 山西
     { type: 'travel', lat: 36.1954, lng: 113.1163, title: '长治', desc: '长治。\n 实际上去的是下属的武乡，去这个地方也是当时树人初中组织研学活动，关于这个地方具体的记忆点已经完全没有了，只记得在酒店里我们一堆男生互相打闹恶作剧了哈哈哈', cityName: '长治市', province: '140000' },
     // 陕西
@@ -67,14 +68,14 @@
     { type: 'travel', lat: 39.7721, lng: 98.2888, title: '嘉峪关', desc: '嘉峪关。\n 其实那次很遗憾，明明都到嘉峪关了，但是当天天气原因（可能是沙尘暴？）嘉峪关城楼没开放，然后旅游团说既然不开放我们就不去了，只好远远的看了一眼（实际上雾蒙蒙的也没看清楚），然后就驶向下一站了。', cityName: '嘉峪关市', province: '620000' },
     // 青海
     { type: 'travel', lat: 36.62, lng: 101.78, title: '西宁', desc: '西宁', cityName: '西宁市', province: '630000' },
-    { type: 'travel', lat: 36.97, lng: 100.24, title: '青海湖（海南）', desc: '青海湖。 \n "高原蓝宝石"，我国最大的内陆咸水湖。湖水湛蓝，周围草原辽阔，我去的时候油菜花田正好盛放，确实美不胜收。', cityName: '海南藏族自治州', province: '630000' },
-    { type: 'travel', lat: 36.72, lng: 99.08, title: '茶卡盐湖（海西）', desc: '茶卡盐湖。 \n "天空之镜"，站在湖面上，真的能看到自己的倒影映在天地之间。景区非常有特色的就地取材，用粗大的盐粒直接铺路，还有很多盐雕，很有意思。', cityName: '海西蒙古族藏族自治州', province: '630000' },
+    { type: 'travel', lat: 36.57, lng: 100.49, title: '海南藏族自治州（青海湖）', desc: '青海湖。 \n "高原蓝宝石"，我国最大的内陆咸水湖。湖水湛蓝，周围草原辽阔，我去的时候油菜花田正好盛放，确实美不胜收。', cityName: '海南藏族自治州', province: '630000' },
+    { type: 'travel', lat: 36.72, lng: 99.08, title: '海西蒙古族藏族自治州（茶卡盐湖）', desc: '茶卡盐湖。 \n "天空之镜"，站在湖面上，真的能看到自己的倒影映在天地之间。景区非常有特色的就地取材，用粗大的盐粒直接铺路，还有很多盐雕，很有意思。', cityName: '海西蒙古族藏族自治州', province: '630000' },
 
     // ===== 旅行：韩国 ===== (cityName 与 southkorea-maps GeoJSON 的 properties.name 一致，韩文)
-    { type: 'travel', lat: 37.56, lng: 126.98, title: '首尔', desc: '首尔。 \n "Seoul my soul." 彻底颠覆我对这座城市乃至这个国家刻板印象的一座城市，当之无愧的亚洲一线。尤其欣赏他们在各种国家级博物馆中，对于很多历史事件的陈述与反思，真的很有启发意义。', cityName: '서울특별시', country: 'KR' },
-    { type: 'travel', lat: 37.46, lng: 126.71, title: '仁川', desc: '仁川 \n 虽然没下来玩，但是从仁川机场下飞机去的首尔，浅浅地仁川登陆了一下。 \n By the way 我必须吐槽一下仁川机场的入境，让所有外国人（不只是中国人）全部排长队，一排边的窗口只开三个，害我们等了一个多小时才入境。', cityName: '인천광역시', country: 'KR' },
-    { type: 'travel', lat: 35.17, lng: 129.07, title: '釜山', desc: '釜山。 \n "Busan is good!" \n 深邃的海，柔和的阳光，静静的跨过海湾的广安里大桥，人声鼎沸的扎嘎其海鲜市场，还有热情而不急不躁的市民们。一切都是那么的恰到好处。一定会再见的！', cityName: '부산광역시', country: 'KR' },
-    { type: 'travel', lat: 33.47, lng: 126.53, title: '济州岛', desc: '济州岛。 \n 会永远纪念人生第一次打车被恶意兜圈子绕路,这座岛唯一值得留恋的就是海景了。 \n 其他地方的话...一句话概括就是中国旅游团挤满韩国大农村————谁也别笑谁，素质这一块都半斤八两', cityName: '제주특별자치도', country: 'KR' }
+    { type: 'travel', lat: 37.56, lng: 126.98, title: '首尔 Seoul', desc: '首尔。 \n "Seoul my soul." 彻底颠覆我对这座城市乃至这个国家刻板印象的一座城市，当之无愧的亚洲一线。尤其欣赏他们在各种国家级博物馆中，对于很多历史事件的陈述与反思，真的很有启发意义。', cityName: '서울특별시', country: 'KR' },
+    { type: 'travel', lat: 37.46, lng: 126.71, title: '仁川 Incheon', desc: '仁川 \n 虽然没下来玩，但是从仁川机场下飞机去的首尔，浅浅地仁川登陆了一下。 \n By the way 我必须吐槽一下仁川机场的入境，让所有外国人（不只是中国人）全部排长队，一排边的窗口只开三个，害我们等了一个多小时才入境。', cityName: '인천광역시', country: 'KR' },
+    { type: 'travel', lat: 35.17, lng: 129.07, title: '釜山 Busan', desc: '釜山。 \n "Busan is good!" \n 深邃的海，柔和的阳光，静静的跨过海湾的广安里大桥，人声鼎沸的扎嘎其海鲜市场，还有热情而不急不躁的市民们。一切都是那么的恰到好处。一定会再见的！', cityName: '부산광역시', country: 'KR' },
+    { type: 'travel', lat: 33.47, lng: 126.53, title: '济州岛 Jeju', desc: '济州岛。 \n 会永远纪念人生第一次打车被恶意兜圈子绕路,这座岛唯一值得留恋的就是海景了。 \n 其他地方的话...一句话概括就是中国旅游团挤满韩国大农村————谁也别笑谁，素质这一块都半斤八两', cityName: '제주특별자치도', country: 'KR' }
   ];
 
   var colors = { home: '#e74c3c', study: '#3b82f6', travel: '#10b981' };
@@ -120,8 +121,31 @@
       onAdd: function() {
         var container = L.DomUtil.create('div', 'footprint-view-switcher leaflet-bar');
         container.innerHTML =
-          '<button type="button" data-view="marker" class="fv-btn active">📍 标记点</button>' +
-          '<button type="button" data-view="region" class="fv-btn">🗺️ 区域填色</button>';
+          '<button type="button" data-view="marker" class="fv-btn active" data-zh="📍 标记点" data-en="📍 Markers">📍 标记点</button>' +
+          '<button type="button" data-view="region" class="fv-btn" data-zh="🗺️ 区域填色" data-en="🗺️ Regions">🗺️ 区域填色</button>';
+
+        // Update button texts based on language
+        function updateButtonTexts() {
+          var currentLang = localStorage.getItem('site-lang-preference') || 'zh';
+          var buttons = container.querySelectorAll('[data-view]');
+          buttons.forEach(function(btn) {
+            var zhText = btn.getAttribute('data-zh');
+            var enText = btn.getAttribute('data-en');
+            if (zhText && enText) {
+              btn.textContent = currentLang === 'en' ? enText : zhText;
+            }
+          });
+        }
+
+        // Initialize button texts
+        setTimeout(updateButtonTexts, 100);
+
+        // Listen for language changes
+        var originalShowLang = window.showLang;
+        window.showLang = function(lang) {
+          if (originalShowLang) originalShowLang(lang);
+          setTimeout(updateButtonTexts, 50);
+        };
 
         // 阻止地图拖动/缩放干扰
         L.DomEvent.disableClickPropagation(container);

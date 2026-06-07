@@ -28,8 +28,9 @@
 <meta property="og:description" content="&#x2F;* 首页专用：隐藏页面顶部 Banner（面包屑+冗余标题）和右侧栏，让主内容填满 *&#x2F;   .article.banner.top { display: none !important; }   .l_body { grid-template-columns: 1fr minmax(200px, calc(var(--width-main) + 320px)) 0 !important;">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://github.com/lajoyazyh.png">
-<meta property="article:published_time" content="2026-06-06T06:43:20.435Z">
-<meta property="article:modified_time" content="2026-06-06T06:43:20.435Z">
+<meta property="og:image" content="https://github.com/lajoyazyh.png">
+<meta property="article:published_time" content="2026-06-07T03:51:51.721Z">
+<meta property="article:modified_time" content="2026-06-07T03:51:51.721Z">
 <meta property="article:author" content="Zhu Yehang">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://github.com/lajoyazyh.png">
@@ -92,7 +93,7 @@
   <span class="sep"></span>
   <a class="cap breadcrumb" href="/">Zhu Yehang</a>
   </div>
-<div class="flex-row" id="post-meta"><a class="author" href="/">Zhu Yehang</a><span class="sep"></span><span class="text created"><time datetime="2026-06-06T06:43:20.435Z">2026-06-06</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2026-06-06T06:43:20.435Z">2026-06-06</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><a class="author" href="/">Zhu Yehang</a><span class="sep"></span><span class="text created"><time datetime="2026-06-07T03:51:51.721Z">2026-06-07</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2026-06-07T03:51:51.721Z">2026-06-07</time></span></div></div></div>
     
     <div class="bottom only-title">
       
@@ -108,7 +109,161 @@
   .article.banner.top { display: none !important; }
   .l_body { grid-template-columns: 1fr minmax(200px, calc(var(--width-main) + 320px)) 0 !important; }
   .l_body .l_right { display: none !important; }
+  
+  /* 语言切换按钮样式 */
+  .lang-switch {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 2rem;
+  }
+  .lang-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    color: var(--text-p3);
+  }
+  .lang-btn.active {
+    color: var(--text-p1);
+    font-weight: bold;
+    background: var(--card-hover);
+  }
+  .lang-btn:hover {
+    color: var(--text-p1);
+  }
 </style>
+
+<div class="lang-switch">
+    <button id="btn-en" onclick="showLang('en')" class="lang-btn">English</button>
+    <span style="opacity: 0.3; align-self: center;">|</span>
+    <button id="btn-zh" onclick="showLang('zh')" class="lang-btn">中文</button>
+</div>
+
+<script src="/js/lang-switch.js"></script>
+
+<div id="content-en">
+
+<div style="text-align: center; padding: 3rem 0 2rem;">
+  <img src="https://github.com/lajoyazyh.png" alt="avatar" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
+  <h1 style="font-size: 2.4em; margin: 1rem 0 0.3rem; font-weight: 700;">Zhu Yehang</h1>
+  <p style="font-size: 1.1em; color: var(--text-p2); margin: 0;">
+    Undergraduate · Software Engineering (Intelligent Software), Nanjing University
+  </p>
+  <p style="font-size: 0.95em; color: var(--text-p3); margin: 0.3rem 0 0;">
+    📍 Yangzhou, Jiangsu &nbsp;|&nbsp; 🎓 NJU '27 &nbsp;|&nbsp; 🌏 HKUST Exchange '25
+  </p>
+  <div style="margin-top: 1.2rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+    <a href="/about/" style="text-decoration: none; color: var(--text-p2); font-size: 0.95em;">📄 Full Resume</a>
+  </div>
+</div>
+
+<hr>
+<h2 id="👋-About-Me"><a href="#👋-About-Me" class="headerlink" title="👋 About Me"></a>👋 About Me</h2><p>I am a junior undergraduate student at Nanjing University, majoring in Intelligent Software Engineering. I spent one semester as an exchange student at The Hong Kong University of Science and Technology. I am passionate about <strong>AI and HCI</strong>.</p>
+<p>My research paper <em>SemTabla</em>, which I worked on during my internship at IMATE Lab (Nanjing University), has been accepted by <strong>ACM CHI 2026</strong> with an Honourable Mention Award. Currently, I am exploring LLM application development and full-stack engineering practices in my spare time.</p>
+<p>My MBTI is ENFP, and my zodiac sign is Gemini. I am a jaded Juventus fan, hoping they will return to their peak soon.</p>
+<blockquote>
+<p>Want to know more? Check out my <a href="/about/">full resume and project experience →</a></p>
+</blockquote>
+<hr>
+<h2 id="🛠-Tech-Stack"><a href="#🛠-Tech-Stack" class="headerlink" title="🛠 Tech Stack"></a>🛠 Tech Stack</h2><div style="margin: 1rem 0; line-height: 2.2;">
+
+<div style="margin-bottom: 0.5rem;">
+  <span style="font-weight: 600; color: var(--text-p2); margin-right: 0.5rem;">🔤 Languages:</span>
+  <span style="background: var(--theme-bg, #3b82f6); color: #fff; padding: 3px 12px; border-radius: 14px; font-size: 0.85em; font-weight: 500; margin-right: 4px;">Python</span>
+  <span style="background: var(--theme-bg, #3b82f6); color: #fff; padding: 3px 12px; border-radius: 14px; font-size: 0.85em; font-weight: 500; margin-right: 4px;">C++</span>
+  <span style="background: var(--theme-bg, #3b82f6); color: #fff; padding: 3px 12px; border-radius: 14px; font-size: 0.85em; font-weight: 500; margin-right: 4px;">Java</span>
+  <span style="background: var(--theme-bg, #3b82f6); color: #fff; padding: 3px 12px; border-radius: 14px; font-size: 0.85em; font-weight: 500; margin-right: 4px;">JavaScript</span>
+  <span style="background: var(--theme-bg, #3b82f6); color: #fff; padding: 3px 12px; border-radius: 14px; font-size: 0.85em; font-weight: 500; margin-right: 4px;">SQL</span>
+</div>
+
+<div style="margin-bottom: 0.5rem;">
+  <span style="font-weight: 600; color: var(--text-p2); margin-right: 0.5rem;">📦 Frameworks:</span>
+  <span style="background: #f59e0b; color: #fff; padding: 3px 12px; border-radius: 14px; font-size: 0.85em; font-weight: 500; margin-right: 4px;">PyTorch</span>
+  <span style="background: #f59e0b; color: #fff; padding: 3px 12px; border-radius: 14px; font-size: 0.85em; font-weight: 500; margin-right: 4px;">Qt</span>
+  <span style="background: #f59e0b; color: #fff; padding: 3px 12px; border-radius: 14px; font-size: 0.85em; font-weight: 500; margin-right: 4px;">Spring Boot</span>
+  <span style="background: #f59e0b; color: #fff; padding: 3px 12px; border-radius: 14px; font-size: 0.85em; font-weight: 500; margin-right: 4px;">Vue.js</span>
+  <span style="background: #f59e0b; color: #fff; padding: 3px 12px; border-radius: 14px; font-size: 0.85em; font-weight: 500; margin-right: 4px;">React</span>
+</div>
+
+<div>
+  <span style="font-weight: 600; color: var(--text-p2); margin-right: 0.5rem;">🛠 Tools:</span>
+  <span style="background: #10b981; color: #fff; padding: 3px 12px; border-radius: 14px; font-size: 0.85em; font-weight: 500; margin-right: 4px;">Git</span>
+  <span style="background: #10b981; color: #fff; padding: 3px 12px; border-radius: 14px; font-size: 0.85em; font-weight: 500; margin-right: 4px;">Linux</span>
+  <span style="background: #10b981; color: #fff; padding: 3px 12px; border-radius: 14px; font-size: 0.85em; font-weight: 500; margin-right: 4px;">Docker</span>
+  <span style="background: #10b981; color: #fff; padding: 3px 12px; border-radius: 14px; font-size: 0.85em; font-weight: 500; margin-right: 4px;">LaTeX</span>
+</div>
+
+</div>
+
+<hr>
+<h2 id="🚀-Featured-Projects"><a href="#🚀-Featured-Projects" class="headerlink" title="🚀 Featured Projects"></a>🚀 Featured Projects</h2><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; margin: 1rem 0;">
+
+<div style="border: 1px solid var(--block-border, #e5e7eb); border-radius: 12px; padding: 1.2rem; transition: box-shadow 0.2s;">
+  <h4 style="margin: 0 0 0.5rem;">🎯 SDAA · 3D Object Detection</h4>
+  <p style="font-size: 0.9em; color: var(--text-p2); margin: 0 0 0.8rem;">Sparse Density Adaptive Attention module integrated with PointPillars, achieving +5.28% AP on Pedestrian detection in KITTI benchmark</p>
+  <span style="font-size: 0.8em; color: var(--text-p3);">HKUST COMP4471 · Course Grade A · Project Score 92</span>
+</div>
+
+<div style="border: 1px solid var(--block-border, #e5e7eb); border-radius: 12px; padding: 1.2rem; transition: box-shadow 0.2s;">
+  <h4 style="margin: 0 0 0.5rem;">📚 SemTabla</h4>
+  <p style="font-size: 0.9em; color: var(--text-p2); margin: 0 0 0.8rem;">A Human-in-the-Loop Framework for Semantic Enrichment and Validation of Data Tables, ACM CHI 2026 Honourable Mention</p>
+  <span style="font-size: 0.8em; color: var(--text-p3);">3rd Author · System Design / Literature Review / User Study</span>
+</div>
+
+<div style="border: 1px solid var(--block-border, #e5e7eb); border-radius: 12px; padding: 1.2rem; transition: box-shadow 0.2s;">
+  <h4 style="margin: 0 0 0.5rem;">🏪 Tomato Bookstore</h4>
+  <p style="font-size: 0.9em; color: var(--text-p2); margin: 0 0 0.8rem;">Spring Boot + Vue e-commerce platform for books, featuring user registration/login, shopping, and inventory management</p>
+  <a href="https://github.com/lajoyazyh/tomatoBookstore" target="_blank" style="font-size: 0.85em;">GitHub →</a>
+</div>
+
+<div style="border: 1px solid var(--block-border, #e5e7eb); border-radius: 12px; padding: 1.2rem; transition: box-shadow 0.2s;">
+  <h4 style="margin: 0 0 0.5rem;">🏭 Shapez-like Factory</h4>
+  <p style="font-size: 0.9em; color: var(--text-p2); margin: 0 0 0.8rem;">C++ / Qt factory simulation game with mining, conveyor belts, cutters, and equipment upgrade mechanisms</p>
+  <a href="https://github.com/lajoyazyh/shapezByZYH" target="_blank" style="font-size: 0.85em;">GitHub →</a>
+</div>
+
+</div>
+
+<hr>
+<h2 id="🏆-Honors-Awards"><a href="#🏆-Honors-Awards" class="headerlink" title="🏆 Honors &amp; Awards"></a>🏆 Honors &amp; Awards</h2><table>
+<thead>
+<tr>
+<th>Award</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>🏅 National Scholarship</td>
+<td>Fall 2025</td>
+</tr>
+<tr>
+<td>🎖 ACM CHI 2026 Honourable Mention Award</td>
+<td>2026</td>
+</tr>
+<tr>
+<td>🎓 HKUST Dean’s List (School of Engineering)</td>
+<td>Fall 2025</td>
+</tr>
+<tr>
+<td>📜 Yan Baoling Overseas Exchange Scholarship (Excellent Award)</td>
+<td>Fall 2025</td>
+</tr>
+<tr>
+<td>🥈 People’s Scholarship (Second Prize)</td>
+<td>Fall 2024</td>
+</tr>
+<tr>
+<td>🌟 Outstanding Freshman Award, Nanjing University</td>
+<td>2024</td>
+</tr>
+</tbody></table>
+</div>
+
+<div id="content-zh" style="display: none;">
 
 <div style="text-align: center; padding: 3rem 0 2rem;">
   <img src="https://github.com/lajoyazyh.png" alt="avatar" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
@@ -224,7 +379,7 @@
 <td>2024</td>
 </tr>
 </tbody></table>
-</article>
+</div></article>
 
 
 
@@ -233,7 +388,7 @@
 <div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
 <div class="widgets">
 
-<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">Zhu Yehang</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%91%8B-%E5%85%B3%E4%BA%8E%E6%88%91"><span class="toc-text">👋 关于我</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9B%A0-%E6%8A%80%E6%9C%AF%E6%A0%88"><span class="toc-text">🛠 技术栈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9A%80-%E7%B2%BE%E9%80%89%E9%A1%B9%E7%9B%AE"><span class="toc-text">🚀 精选项目</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🎯 SDAA · 3D 目标检测</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">📚 SemTabla</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🏪 Tomato Bookstore</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-text">🏭 Shapez-like Factory</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%8F%86-%E8%8D%A3%E8%AA%89%E4%BA%AE%E7%82%B9"><span class="toc-text">🏆 荣誉亮点</span></a></li></ol></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a></div></widget>
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#content-en"><span class="toc-text">Zhu Yehang</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%91%8B-About-Me"><span class="toc-text">👋 About Me</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9B%A0-Tech-Stack"><span class="toc-text">🛠 Tech Stack</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9A%80-Featured-Projects"><span class="toc-text">🚀 Featured Projects</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#content-en"><span class="toc-text">🎯 SDAA · 3D Object Detection</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#content-en"><span class="toc-text">📚 SemTabla</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#content-en"><span class="toc-text">🏪 Tomato Bookstore</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#content-en"><span class="toc-text">🏭 Shapez-like Factory</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%8F%86-Honors-Awards"><span class="toc-text">🏆 Honors &amp; Awards</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#content-zh"><span class="toc-text">Zhu Yehang</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%91%8B-%E5%85%B3%E4%BA%8E%E6%88%91"><span class="toc-text">👋 关于我</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9B%A0-%E6%8A%80%E6%9C%AF%E6%A0%88"><span class="toc-text">🛠 技术栈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9A%80-%E7%B2%BE%E9%80%89%E9%A1%B9%E7%9B%AE"><span class="toc-text">🚀 精选项目</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#content-zh"><span class="toc-text">🎯 SDAA · 3D 目标检测</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#content-zh"><span class="toc-text">📚 SemTabla</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#content-zh"><span class="toc-text">🏪 Tomato Bookstore</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#content-zh"><span class="toc-text">🏭 Shapez-like Factory</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%8F%86-%E8%8D%A3%E8%AA%89%E4%BA%AE%E7%82%B9"><span class="toc-text">🏆 荣誉亮点</span></a></li></ol></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a></div></widget>
 </div></aside><div class='float-panel'>
   <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
