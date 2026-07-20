@@ -228,6 +228,15 @@ body {
 .project-featured h3 { font-size: 1.55rem; }
 .project-tile h3 { font-size: 1.08rem; }
 
+.project-title-link {
+  color: inherit !important;
+  text-decoration: none;
+}
+
+.project-title-link:hover {
+  color: var(--project-blue) !important;
+}
+
 .project-featured p,
 .project-tile p {
   margin: 0;
