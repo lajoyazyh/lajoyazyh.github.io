@@ -200,7 +200,7 @@
     // 检查是否为首页
     function isHomePage() {
         const path = window.location.pathname;
-        return path === '/' || path === '/index.html' || path.endsWith('/');
+        return path === '/' || path === '/index.html';
     }
 
     // 检查是否已经触发过动画（使用 sessionStorage）
