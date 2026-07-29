@@ -575,4 +575,79 @@ body {
   .research-workspace { grid-template-columns: 1fr; }
   .research-evidence { display: none; }
   .research-paper-list { border-right: 0; }
+
+  #content-en table:last-of-type,
+  #content-en table:last-of-type tbody,
+  #content-en table:last-of-type tr,
+  #content-en table:last-of-type td,
+  #content-zh table:last-of-type,
+  #content-zh table:last-of-type tbody,
+  #content-zh table:last-of-type tr,
+  #content-zh table:last-of-type td {
+    display: block;
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box;
+  }
+
+  #content-en table:last-of-type,
+  #content-zh table:last-of-type {
+    overflow: visible;
+    border: 0;
+    background: transparent;
+  }
+
+  #content-en table:last-of-type thead,
+  #content-zh table:last-of-type thead {
+    display: none;
+  }
+
+  #content-en table:last-of-type tr,
+  #content-zh table:last-of-type tr {
+    padding: 12px 2px;
+    border-bottom: 1px solid var(--block-border, rgba(120, 120, 120, 0.2));
+  }
+
+  #content-en table:last-of-type td,
+  #content-zh table:last-of-type td {
+    padding: 2px 8px !important;
+    border: 0 !important;
+    text-align: left !important;
+    white-space: normal;
+  }
+
+  #content-en table:last-of-type td:first-child,
+  #content-zh table:last-of-type td:first-child {
+    color: var(--text-p1);
+    font-weight: 700;
+  }
+
+  #content-en table:last-of-type td:nth-child(2),
+  #content-zh table:last-of-type td:nth-child(2) {
+    margin-top: 4px;
+    color: var(--text-p2);
+    font-size: 0.84rem;
+  }
+
+  #content-en table:last-of-type td:nth-child(3),
+  #content-zh table:last-of-type td:nth-child(3) {
+    color: var(--text-p3);
+    font-size: 0.78rem;
+  }
+
+  #content-en table:last-of-type td:nth-child(2)::before {
+    content: "Awarded by · ";
+  }
+
+  #content-en table:last-of-type td:nth-child(3)::before {
+    content: "Date · ";
+  }
+
+  #content-zh table:last-of-type td:nth-child(2)::before {
+    content: "颁发机构 · ";
+  }
+
+  #content-zh table:last-of-type td:nth-child(3)::before {
+    content: "时间 · ";
+  }
 }
