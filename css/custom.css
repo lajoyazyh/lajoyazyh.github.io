@@ -540,10 +540,6 @@ body {
 .visitor-stats-note { margin: 9px 0 0; color: var(--text-p3); font-size: 0.76rem; }
 
 .visitor-map {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 250px;
-  align-items: center;
-  gap: 28px;
   margin: 3.2rem 0 1rem;
   padding: 24px 26px;
   border: 1px solid var(--block-border, rgba(120, 120, 120, 0.22));
@@ -554,9 +550,9 @@ body {
 .visitor-map-copy p { margin: 0; color: var(--text-p2); font-size: 0.86rem; line-height: 1.65; }
 .visitor-map-copy h2 { margin: 4px 0 7px; font-size: 1.08rem; letter-spacing: 0; }
 .visitor-map-kicker { color: var(--project-blue, #285ac8) !important; font-size: 0.72rem !important; font-weight: 750; text-transform: uppercase; letter-spacing: 0.08em; }
-.visitor-map-widget { position: relative; width: 250px; height: 125px; overflow: hidden; border-radius: 5px; line-height: 0; background: #373e44; }
-.visitor-map-fallback { position: absolute; inset: 0; z-index: 0; display: block; width: 250px; height: 125px; object-fit: cover; }
-.visitor-map-widget > span { position: absolute !important; inset: 0; z-index: 1; margin: 0 !important; }
+.visitor-map-link { display: block; max-width: 800px; margin: 22px auto 0; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 6px; line-height: 0; }
+.visitor-map-link img { display: block; width: 100%; height: auto; }
+.visitor-map-note { margin: 10px 0 0; color: var(--text-p3); font-size: 0.76rem; text-align: center; }
 
 .project-link {
   margin-top: 15px;
@@ -629,7 +625,6 @@ body {
   .project-flow { grid-template-columns: 1fr; }
   .visitor-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .visitor-stats-link { grid-column: 1 / -1; min-height: 42px; padding: 11px 16px; }
-  .visitor-map { grid-template-columns: 1fr; gap: 16px; }
 }
 
 @media (max-width: 620px) {
@@ -642,7 +637,6 @@ body {
   .visitor-stat strong { font-size: 1.12rem; }
   .visitor-stat-label, .visitor-stat-detail { font-size: 0.68rem; }
   .visitor-map { margin-top: 2.4rem; padding: 20px; }
-  .visitor-map-widget { justify-self: center; }
   .research-workspace { grid-template-columns: 1fr; }
   .research-evidence { display: none; }
   .research-paper-list { border-right: 0; }
