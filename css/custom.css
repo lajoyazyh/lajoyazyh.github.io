@@ -495,11 +495,8 @@ body {
 .project-icon svg { width: 21px; height: 21px; }
 .project-meta { margin-top: 13px; color: var(--text-p3); font-size: 0.78rem; }
 
-/* Homepage visitor statistics */
-.visitor-stats {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
-  align-items: stretch;
+/* Homepage Umami visitor map */
+.visitor-map-frame {
   margin: 1.25rem 0 0;
   border: 1px solid var(--block-border, rgba(120, 120, 120, 0.22));
   border-radius: 8px;
@@ -507,37 +504,15 @@ body {
   background: var(--card, rgba(255, 255, 255, 0.78));
 }
 
-.visitor-stat {
-  min-width: 0;
-  padding: 19px 21px;
-  display: grid;
-  gap: 4px;
-  border-right: 1px solid var(--block-border, rgba(120, 120, 120, 0.18));
+.visitor-map-frame iframe {
+  display: block;
+  width: 100%;
+  height: clamp(560px, 52vw, 720px);
+  border: 0;
+  background: #171717;
 }
 
-.visitor-stat-label { color: var(--text-p3); font-size: 0.75rem; font-weight: 700; }
-.visitor-stat strong { color: var(--text-p1); font-size: 1.35rem; line-height: 1.2; }
-.visitor-stat-detail { color: var(--text-p2); font-size: 0.78rem; }
-
-.visitor-stats-link {
-  min-width: 126px;
-  padding: 18px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  background: var(--project-blue, #285ac8);
-  color: #fff !important;
-  font-size: 0.82rem;
-  font-weight: 700;
-  text-align: center;
-  text-decoration: none !important;
-  transition: background 0.18s ease;
-}
-
-.visitor-stats-link:hover { background: #1e49aa; }
-.visitor-stats-link svg { width: 15px; height: 15px; flex: 0 0 auto; }
-.visitor-stats-note { margin: 9px 0 0; color: var(--text-p3); font-size: 0.76rem; }
+.visitor-map-note { margin: 9px 0 0; color: var(--text-p3); font-size: 0.76rem; }
 
 
 .project-link {
@@ -609,8 +584,7 @@ body {
   .project-research-copy { border-top: 1px solid var(--block-border, rgba(120, 120, 120, 0.18)); border-left: 0; }
   .project-product-preview { min-height: 300px; }
   .project-flow { grid-template-columns: 1fr; }
-  .visitor-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .visitor-stats-link { grid-column: 1 / -1; min-height: 42px; padding: 11px 16px; }
+  .visitor-map-frame iframe { height: 620px; }
 }
 
 @media (max-width: 620px) {
@@ -619,9 +593,7 @@ body {
   .project-product-preview { padding: 14px; }
   .project-research-visual { padding: 14px; }
   .project-research-visual > span { left: 21px; bottom: 21px; max-width: calc(100% - 42px); font-size: 0.64rem; }
-  .visitor-stat { padding: 15px 10px; }
-  .visitor-stat strong { font-size: 1.12rem; }
-  .visitor-stat-label, .visitor-stat-detail { font-size: 0.68rem; }
+  .visitor-map-frame iframe { height: 560px; }
   .research-workspace { grid-template-columns: 1fr; }
   .research-evidence { display: none; }
   .research-paper-list { border-right: 0; }
