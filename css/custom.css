@@ -495,8 +495,14 @@ body {
 .project-icon svg { width: 21px; height: 21px; }
 .project-meta { margin-top: 13px; color: var(--text-p3); font-size: 0.78rem; }
 
-/* Homepage Umami visitor map */
-.visitor-map-frame {
+/* Standalone Umami analytics page */
+.analytics-page-intro {
+  max-width: 760px;
+  margin: 0 0 1.35rem;
+  color: var(--text-p2);
+}
+
+.analytics-dashboard-frame {
   margin: 1.25rem 0 0;
   border: 1px solid var(--block-border, rgba(120, 120, 120, 0.22));
   border-radius: 8px;
@@ -504,15 +510,15 @@ body {
   background: var(--card, rgba(255, 255, 255, 0.78));
 }
 
-.visitor-map-frame iframe {
+.analytics-dashboard-frame iframe {
   display: block;
   width: 100%;
-  height: clamp(560px, 52vw, 720px);
+  height: clamp(980px, 74vw, 1320px);
   border: 0;
   background: #171717;
 }
 
-.visitor-map-note { margin: 9px 0 0; color: var(--text-p3); font-size: 0.76rem; }
+.analytics-page-note { margin: 9px 0 0; color: var(--text-p3); font-size: 0.76rem; }
 
 
 .project-link {
@@ -584,7 +590,7 @@ body {
   .project-research-copy { border-top: 1px solid var(--block-border, rgba(120, 120, 120, 0.18)); border-left: 0; }
   .project-product-preview { min-height: 300px; }
   .project-flow { grid-template-columns: 1fr; }
-  .visitor-map-frame iframe { height: 620px; }
+  .analytics-dashboard-frame iframe { height: 1120px; }
 }
 
 @media (max-width: 620px) {
@@ -593,7 +599,7 @@ body {
   .project-product-preview { padding: 14px; }
   .project-research-visual { padding: 14px; }
   .project-research-visual > span { left: 21px; bottom: 21px; max-width: calc(100% - 42px); font-size: 0.64rem; }
-  .visitor-map-frame iframe { height: 560px; }
+  .analytics-dashboard-frame iframe { height: 1420px; }
   .research-workspace { grid-template-columns: 1fr; }
   .research-evidence { display: none; }
   .research-paper-list { border-right: 0; }
