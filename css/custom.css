@@ -503,17 +503,21 @@ body {
 }
 
 .analytics-dashboard-frame {
-  margin: 1.25rem 0 0;
-  border: 1px solid var(--block-border, rgba(120, 120, 120, 0.22));
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--card, rgba(255, 255, 255, 0.78));
+  width: 100%;
+  margin: 1.5rem 0 0;
+  border: 0;
+  border-radius: 0;
+  overflow: visible;
+  background: transparent;
 }
 
 .analytics-dashboard-frame iframe {
   display: block;
+  box-sizing: border-box;
   width: 100%;
+  min-width: 100%;
   height: clamp(980px, 74vw, 1320px);
+  margin: 0 !important;
   border: 0;
   background: #171717;
 }
