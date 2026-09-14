@@ -51,8 +51,19 @@
       cityName: '舟山市', province: '330000' 
     },
     // 直辖市
-    { type: 'travel', lat: 39.90, lng: 116.40, title: '北京', titleEn: 'Beijing', desc: '北京，中华人民共和国首都。', cityName: '北京市', province: '110000' },
-    { type: 'travel', lat: 31.23, lng: 121.47, title: '上海', titleEn: 'Shanghai', desc: '上海', cityName: '上海市', province: '310000' },
+    { type: 'travel', lat: 39.90, lng: 116.40, title: '北京', titleEn: 'Beijing',
+      desc: '北京，中华人民共和国首都。\n 2026年9月6–7日，原本来参加清华综合考核，重新考虑方向后，和朋友认真逛了清华与北邮。做完决定以后，校园也有了不一样的看法。',
+      cityName: '北京市', province: '110000', post: '/2026/09/11/qinhuangdao-trip-2026/'
+    },
+    { type: 'travel', lat: 31.23, lng: 121.47, title: '上海', titleEn: 'Shanghai',
+      desc: '上海。\n 2026年9月11日，旅行最后一天走进外滩原汇丰银行大楼，看马赛克穹顶，下午去世博会博物馆，傍晚回苏州。老建筑和博物馆，还是最合我的胃口。',
+      cityName: '上海市', province: '310000', post: '/2026/09/11/qinhuangdao-trip-2026/'
+    },
+    // 河北
+    { type: 'travel', lat: 39.94, lng: 119.60, title: '秦皇岛', titleEn: 'Qinhuangdao',
+      desc: '2026年9月7–10日。\n 角山、天下第一关、老龙头，从山到关再到海，终于把山海关连在了一起。西港花园散步，北戴河吹海风，去东北大学秦皇岛分校见朋友。海鲜几次踩雷，文明饭庄的东北家常菜倒很惊喜。',
+      cityName: '秦皇岛市', province: '130000', post: '/2026/09/11/qinhuangdao-trip-2026/'
+    },
     // 粤港澳
     { type: 'travel', lat: 23.13, lng: 113.26, title: '广州', titleEn: 'Guangzhou', desc: '广州，广东省省会。', cityName: '广州市', province: '440000' },
     { type: 'travel', lat: 22.55, lng: 114.06, title: '深圳', titleEn: 'Shenzhen', desc: '深圳', cityName: '深圳市', province: '440000' },
@@ -259,7 +270,8 @@
       
       marker.bindPopup(
         '<h4 style="color:#333;margin-bottom:5px;">' + displayTitle + '</h4>' +
-        '<p style="color:#666;margin:0;">' + p.desc.replace(/\n/g, '<br>') + '</p>'
+        '<p style="color:#666;margin:0;">' + p.desc.replace(/\n/g, '<br>') + '</p>' +
+        travelPostLink(p)
       );
       layer.addLayer(marker);
     });
@@ -280,7 +292,7 @@
       } else {
         // 韩国 title 后面附上韩文原名，便于辨认
         var titleText = (p.country === 'KR') ? (p.title + '（' + p.cityName + '）') : p.title;
-        map[key] = { type: p.type, title: titleText, titleEn: p.titleEn, desc: p.desc };
+        map[key] = { type: p.type, title: titleText, titleEn: p.titleEn, desc: p.desc, post: p.post };
       }
     }
 
@@ -363,6 +375,10 @@
     };
   }
 
+  function travelPostLink(place) {
+    return place.post ? '<p style="margin:8px 0 0;"><a href="' + place.post + '">阅读游记 / Read journal</a></p>' : '';
+  }
+
   function bindRegionPopup(entry) {
     return function(feature, layer) {
       // Display title with English translation if available
@@ -370,7 +386,8 @@
       
       layer.bindPopup(
         '<h4 style="color:#333;margin-bottom:5px;">' + displayTitle + '</h4>' +
-        '<p style="color:#666;margin:0;">' + entry.desc.replace(/\n/g, '<br>') + '</p>'
+        '<p style="color:#666;margin:0;">' + entry.desc.replace(/\n/g, '<br>') + '</p>' +
+        travelPostLink(entry)
       );
       layer.on('mouseover', function() { layer.setStyle({ fillOpacity: 0.8 }); });
       layer.on('mouseout', function() { layer.setStyle({ fillOpacity: 0.55 }); });
