@@ -159,16 +159,33 @@
 
   var colors = { home: '#e74c3c', study: '#3b82f6', travel: '#10b981' };
 
-  // ============ 2. 加载 Leaflet ============
-  var link = document.createElement('link');
-  link.rel = 'stylesheet';
-  link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
-  document.head.appendChild(link);
+  // ============ 2. 加载 Leaflet 与聚合插件 ============
+  function addStylesheet(href) {
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = href;
+    document.head.appendChild(link);
+  }
 
-  var script = document.createElement('script');
-  script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
-  script.onload = initMap;
-  document.head.appendChild(script);
+  function addScript(src, onload, onerror) {
+    var script = document.createElement('script');
+    script.src = src;
+    script.onload = onload;
+    script.onerror = onerror;
+    document.head.appendChild(script);
+  }
+
+  addStylesheet('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css');
+  addStylesheet('https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css');
+  addStylesheet('https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css');
+
+  addScript('https://unpkg.com/leaflet@1.9.4/dist/leaflet.js', function() {
+    addScript(
+      'https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js',
+      initMap,
+      initMap
+    );
+  });
 
   // ============ 3. 主初始化 ============
   function initMap() {
@@ -184,15 +201,29 @@
       maxZoom: 18
     }).addTo(map);
 
-    // 两个图层组，便于一键切换
-    var markerLayer = L.layerGroup();
+    // 两个图层组，便于一键切换。地点密集时自动收拢为数量标记。
+    var markerLayer = L.markerClusterGroup ? L.markerClusterGroup({
+      maxClusterRadius: 44,
+      showCoverageOnHover: false,
+      spiderfyOnMaxZoom: false,
+      disableClusteringAtZoom: 11,
+      iconCreateFunction: function(cluster) {
+        var count = cluster.getChildCount();
+        var size = count >= 100 ? 44 : count >= 10 ? 40 : 36;
+        return L.divIcon({
+          html: '<span>' + count + '</span>',
+          className: 'footprint-cluster',
+          iconSize: [size, size]
+        });
+      }
+    }) : L.layerGroup();
     var regionLayer = L.layerGroup();
 
     buildMarkers(markerLayer);
     buildRegions(regionLayer);
 
-    // 默认显示标记点视图
-    markerLayer.addTo(map);
+    // 默认显示区域填色视图。
+    regionLayer.addTo(map);
 
     // ============ 4. 视图切换按钮控件 ============
     var ViewSwitcher = L.Control.extend({
@@ -200,8 +231,8 @@
       onAdd: function() {
         var container = L.DomUtil.create('div', 'footprint-view-switcher leaflet-bar');
         container.innerHTML =
-          '<button type="button" data-view="marker" class="fv-btn active" data-zh="📍 标记点" data-en="📍 Markers">📍 标记点</button>' +
-          '<button type="button" data-view="region" class="fv-btn" data-zh="🗺️ 区域填色" data-en="🗺️ Regions">🗺️ 区域填色</button>';
+          '<button type="button" data-view="region" class="fv-btn active" data-zh="🗺️ 区域填色" data-en="🗺️ Regions">🗺️ 区域填色</button>' +
+          '<button type="button" data-view="marker" class="fv-btn" data-zh="📍 标记点" data-en="📍 Markers">📍 标记点</button>';
 
         // Update button texts based on language
         function updateButtonTexts() {
@@ -238,12 +269,12 @@
           container.querySelectorAll('.fv-btn').forEach(function(b) { b.classList.remove('active'); });
           btn.classList.add('active');
           // 切换图层
-          if (view === 'marker') {
-            map.removeLayer(regionLayer);
-            markerLayer.addTo(map);
-          } else {
+          if (view === 'region') {
             map.removeLayer(markerLayer);
             regionLayer.addTo(map);
+          } else {
+            map.removeLayer(regionLayer);
+            markerLayer.addTo(map);
           }
         });
         return container;
@@ -255,14 +286,15 @@
   // ============ 5. 标记点视图 ============
   function buildMarkers(layer) {
     places.forEach(function(p) {
-      var isBig = (p.type === 'home' || p.type === 'study');
-      var marker = L.circleMarker([p.lat, p.lng], {
-        radius: isBig ? 12 : 7,
-        fillColor: colors[p.type],
-        color: '#00000050',
-        weight: isBig ? 2 : 1.5,
-        opacity: 1,
-        fillOpacity: isBig ? 0.85 : 0.75
+      // 所有地点使用相同外径；颜色区分家乡、求学和旅行，而非大小。
+      var marker = L.marker([p.lat, p.lng], {
+        icon: L.divIcon({
+          className: 'footprint-place-marker footprint-place-marker--' + p.type,
+          html: '<span></span>',
+          iconSize: [18, 18],
+          iconAnchor: [9, 9],
+          popupAnchor: [0, -10]
+        })
       });
       
       // Display title with English translation if available
