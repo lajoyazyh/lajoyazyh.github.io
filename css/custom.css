@@ -212,6 +212,15 @@ body {
   margin-bottom: 1.25rem;
 }
 
+.blog-filter-results[hidden],
+.post-list.post[hidden],
+.blog-filter-reset[hidden],
+.paginator[hidden],
+.pagination[hidden],
+nav[aria-label="pagination"][hidden] {
+  display: none !important;
+}
+
 .blog-filter-card {
   display: grid;
   grid-template-columns: 1fr;
