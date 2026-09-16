@@ -28,7 +28,14 @@
     { type: 'travel', lat: 31.77, lng: 120.00, title: '常州', titleEn: 'Changzhou', desc: '常州', cityName: '常州市', province: '320000' },
     { type: 'travel', lat: 32.19, lng: 119.45, title: '镇江', titleEn: 'Zhenjiang', desc: '镇江', cityName: '镇江市', province: '320000' },
     { type: 'travel', lat: 33.50, lng: 119.02, title: '淮安', titleEn: "Huai'an", desc: '淮安', cityName: '淮安市', province: '320000' },
-    { type: 'travel', lat: 33.35, lng: 120.16, title: '盐城', titleEn: 'Yancheng', desc: '盐城', cityName: '盐城市', province: '320000' },
+    { type: 'travel', lat: 33.35, lng: 120.16, title: '盐城', titleEn: 'Yancheng',
+      desc: '2026年8月15–17日，和父母沿黄海海岸自驾。看盐城博物馆与海盐博物馆，在丹顶鹤湿地赶上放飞，也在去大丰的路上意外遇见风车与晚霞下的野生麋鹿。后来经野鹿荡、东台与条子泥一路向南，第一次看到成群候鸟铺满海岸和天空。',
+      cityName: '盐城市', province: '320000'
+    },
+    { type: 'travel', lat: 32.29, lng: 120.87, title: '南通（如东、如皋）', titleEn: 'Nantong (Rudong & Rugao)',
+      desc: '2026年8月17–18日。原本在条子泥没能看到潮汐树，却在如东小洋口意外如愿；随后转往如皋，在水绘园、如皋师范学堂与父亲那一代师范生的记忆相遇。',
+      cityName: '南通市', province: '320000', blogLocation: '南通'
+    },
     { type: 'travel', lat: 32.46, lng: 119.91, title: '泰州', titleEn: 'Taizhou', desc: '泰州', cityName: '泰州市', province: '320000' },
     // 安徽
     { type: 'travel', lat: 31.33, lng: 118.38, title: '芜湖', titleEn: 'Wuhu', desc: '芜湖', cityName: '芜湖市', province: '340000' },
