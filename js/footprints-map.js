@@ -3,6 +3,33 @@
   // type: home / study / travel
   // cityName 必须与 GeoJSON 中 properties.name 完全一致（DataV：地级市/直辖市/特别行政区）
   // province: 中国大陆省级 adcode；港澳台用 810000/820000/710000；境外用国家代码
+  var blogLocationIdsByCity = {
+    '扬州市': 'cn-jiangsu-yangzhou', '南京市': 'cn-jiangsu-nanjing', '苏州市': 'cn-jiangsu-suzhou',
+    '香港特别行政区': 'cn-hong-kong', '澳门特别行政区': 'cn-macau',
+    '无锡市': 'cn-jiangsu-wuxi', '常州市': 'cn-jiangsu-changzhou', '镇江市': 'cn-jiangsu-zhenjiang',
+    '淮安市': 'cn-jiangsu-huaian', '盐城市': 'cn-jiangsu-yancheng', '南通市': 'cn-jiangsu-nantong',
+    '泰州市': 'cn-jiangsu-taizhou', '秦皇岛市': 'cn-hebei-qinhuangdao',
+    '芜湖市': 'cn-anhui-wuhu', '马鞍山市': 'cn-anhui-maanshan', '宣城市': 'cn-anhui-xuancheng',
+    '滁州市': 'cn-anhui-chuzhou', '合肥市': 'cn-anhui-hefei', '黄山市': 'cn-anhui-huangshan',
+    '杭州市': 'cn-zhejiang-hangzhou', '宁波市': 'cn-zhejiang-ningbo', '湖州市': 'cn-zhejiang-huzhou',
+    '绍兴市': 'cn-zhejiang-shaoxing', '嘉兴市': 'cn-zhejiang-jiaxing', '舟山市': 'cn-zhejiang-zhoushan',
+    '北京市': 'cn-beijing', '上海市': 'cn-shanghai',
+    '广州市': 'cn-guangdong-guangzhou', '深圳市': 'cn-guangdong-shenzhen', '珠海市': 'cn-guangdong-zhuhai',
+    '武汉市': 'cn-hubei-wuhan', '张家界市': 'cn-hunan-zhangjiajie', '青岛市': 'cn-shandong-qingdao',
+    '大连市': 'cn-liaoning-dalian', '沈阳市': 'cn-liaoning-shenyang', '本溪市': 'cn-liaoning-benxi',
+    '长春市': 'cn-jilin-changchun', '延边朝鲜族自治州': 'cn-jilin-yanbian',
+    '长治市': 'cn-shanxi-changzhi', '西安市': 'cn-shaanxi-xian',
+    '兰州市': 'cn-gansu-lanzhou', '张掖市': 'cn-gansu-zhangye', '酒泉市': 'cn-gansu-jiuquan',
+    '嘉峪关市': 'cn-gansu-jiayuguan', '西宁市': 'cn-qinghai-xining',
+    '海南藏族自治州': 'cn-qinghai-hainan', '海西蒙古族藏族自治州': 'cn-qinghai-haixi',
+    '서울특별시': 'kr-seoul', '인천광역시': 'kr-incheon', '부산광역시': 'kr-busan',
+    '제주특별자치도': 'kr-jeju'
+  };
+  var blogLocationIdsByTitle = {
+    '延吉': 'cn-jilin-yanbian-yanji',
+    '济州市': 'kr-jeju-jeju',
+    '西归浦市': 'kr-jeju-seogwipo'
+  };
   var places = [
     // ===== 家乡 =====
     { type: 'home', lat: 32.39, lng: 119.42, title: '🏠 扬州', titleEn: 'Yangzhou', desc: '家乡。感谢花园小学、树人初中、扬州中学的栽培，感谢我的父母让我出生在这样一座美丽的城市。', cityName: '扬州市', province: '320000' },
@@ -34,7 +61,7 @@
     },
     { type: 'travel', lat: 32.29, lng: 120.87, title: '南通（如东、如皋）', titleEn: 'Nantong (Rudong & Rugao)',
       desc: '2026年8月17–18日。原本在条子泥没能看到潮汐树，却在如东小洋口意外如愿；随后转往如皋，在水绘园、如皋师范学堂与父亲那一代师范生的记忆相遇。',
-      cityName: '南通市', province: '320000', blogLocation: '南通'
+      cityName: '南通市', province: '320000', blogLocationId: 'cn-jiangsu-nantong'
     },
     { type: 'travel', lat: 32.46, lng: 119.91, title: '泰州', titleEn: 'Taizhou', desc: '泰州', cityName: '泰州市', province: '320000' },
     // 安徽
@@ -336,7 +363,7 @@
           title: titleText,
           titleEn: p.titleEn,
           desc: p.desc,
-          blogLocation: getBlogLocation(p)
+          blogLocationId: getBlogLocation(p)
         };
       }
     }
@@ -421,11 +448,13 @@
   }
 
   function getBlogLocation(place) {
-    return place.blogLocation || String(place.title || '').replace(/^(?:🏠|🎓)\s*/, '');
+    var title = String(place.title || '').replace(/^(?:🏠|🎓)\s*/, '');
+    return place.blogLocationId || blogLocationIdsByTitle[title] || blogLocationIdsByCity[place.cityName] || '';
   }
 
   function locationBlogLink(place) {
     var location = getBlogLocation(place);
+    if (!location) return '';
     return '<p style="margin:8px 0 0;"><a href="/blog/?location=' + encodeURIComponent(location) + '">此地相关文章 / Posts from this place</a></p>';
   }
 
